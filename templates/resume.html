@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block content %}
+<style>
+    body, html {
+        margin: 0;
+        height: 100%;
+    }
+    iframe {
+        width: 100%;
+        height: 100vh;
+        border: none;
+    }
+</style>
+
+<section class="resume my-5">
+</head>
+<body>
+<h1>My Resume</h1>
+<iframe src="{{ url_for('serve_resume') }}"></iframe>
+</section>
+
+
+{% endblock %}

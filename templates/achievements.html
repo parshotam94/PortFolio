@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Achievements</h2>
+<br>
+<div class="leetcode-section">
+    <h3>LeetCode Badges</h3>
+    
+    <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+        {% for badge in badges %}
+            <div class="badge-item" style="text-align: center;">
+                <img src="{{ badge.icon }}" alt="{{ badge.name }}" width="100">
+                <p style="font-size: 12px;">{{ badge.name }}</p>
+            </div>
+        {% else %}
+            <p>No badges found or profile is private.</p>
+        {% endfor %}
+    </div>
+</div>
+
+<h3>Coding Ninjas Badges</h3>
+<div class="badge-container" style="display: flex; flex-wrap: wrap; gap: 12px;">
+    {% for badge in cn_badges %}
+    <div class="badge-card level-{{ badge.level }}" style="border: 1px solid #ddd; padding: 10px; border-radius: 8px; display: flex; align-items: center; gap: 10px;">
+        <div>
+            <div style="font-weight: bold; font-size: 14px;">{{ badge.name }}</div>
+            <div style="font-size: 11px; color: #666;">{{ badge.level }}</div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<h3>Other ScreenShots</h3>
+<img src="static/images/rewind2025.png" alt ="rewind" height="500px" width="800px">
+<img src="static/images/download.png" alt ="dcc" height="500px" width="300px">
+
+{% endblock %}

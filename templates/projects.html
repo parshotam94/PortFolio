@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block content %}
+<h2>GitHub Repos</h2>
+
+<div class="coding-profiles">
+  {% for repo in git %}
+  <div class="card glass-card">
+    <h4>{{ repo.name }}</h4>
+
+    <a href="{{ repo.html_url }}" target="_blank">
+      <img src="{{ repo.owner.avatar_url }}" alt="GitHub Avatar" width="80" />
+    </a>
+
+    <p>Language: {{ repo.language }}</p>
+    <p>Description: {{ repo.description }}</p>
+  </div>
+  {% endfor %}
+</div>
+
+<h3>Some other links</h3>
+<a href="https://cardioguard-ai-123.streamlit.app/">CardioGuard-AI</a>
+{% endblock %}

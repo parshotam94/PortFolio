@@ -1,0 +1,140 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="profile-img">
+  <img
+    src="{{ url_for('static', filename='images/me.jpg') }}"
+    class="profile"
+  />
+
+  <!-- Skills Card -->
+  <div class="card glass-card p-3 skill-card">
+    <h5 class="text-center mb-3">Skills</h5>
+
+    <div class="skill-item">
+      <small class="fw-semibold">C++ (DSA)</small>
+      <div class="progress skill-progress">
+        <div class="progress-bar bg-warning" style="width: 90%"></div>
+      </div>
+    </div>
+
+    <div class="skill-item">
+      <small class="fw-semibold">Python</small>
+      <div class="progress skill-progress">
+        <div class="progress-bar bg-info" style="width: 85%"></div>
+      </div>
+    </div>
+
+    <div class="skill-item">
+      <small class="fw-semibold">ML / AI</small>
+      <div class="progress skill-progress">
+        <div class="progress-bar bg-success" style="width: 80%"></div>
+      </div>
+    </div>
+
+    <div class="skill-item">
+      <small class="fw-semibold">SQL / DBMS</small>
+      <div class="progress skill-progress">
+        <div class="progress-bar bg-secondary" style="width: 80%"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br /><br />
+
+<!-- INTRO -->
+<div class="intro">
+  <h1>Hi, I'm Prshotam Singh 👋</h1>
+  <p>
+    I am a Computer Science student passionate about
+    <strong>AI, Machine Learning, and Deep Learning</strong>, with a strong
+    foundation in <strong>C++ for solving complex DSA problems</strong>.
+  </p>
+  <p>
+    I enjoy tackling challenging algorithms and data structures problems,
+    building intelligent projects, and applying mathematical concepts to
+    real-world solutions. My work spans
+    <strong
+      >machine learning projects, deep learning models, and competitive
+      programming</strong
+    >, where I actively solve problems on platforms like
+    <a href="https://leetcode.com/prshotm/" target="_blank">LeetCode</a> and
+    <a
+      href="https://www.geeksforgeeks.org/user/parshotammanhas/"
+      target="_blank"
+      >GFG</a
+    >.
+  </p>
+  <p>
+    With a keen interest in <strong>coding, AI, and mathematics</strong>, I am
+    constantly learning and building projects that combine theory with practical
+    applications, turning ideas into working solutions.
+  </p>
+</div>
+
+<h3>Platforms</h3>
+
+<div class="coding-profiles">
+  <div class="card glass-card">
+    <h3>LeetCode</h3>
+    <a href="https://leetcode.com/prshotm/" target="_blank">
+      <img src="https://leetcard.jacoblin.cool/prshotm?theme=light" />
+    </a>
+    <p><strong>Badges: </strong> {{leetcode_badges_cnt}}</p>
+  </div>
+
+  <div class="card glass-card">
+    <h3>GeeksForGeeks</h3>
+    <a
+      href="https://www.geeksforgeeks.org/user/parshotammanhas/"
+      target="_blank"
+    >
+      <img src="https://gfgstatscard.vercel.app/parshotammanhas" />
+    </a>
+  </div>
+
+  <div class="card glass-card">
+    <h3>Codeforces</h3>
+    <a href="https://codeforces.com/profile/prshotm94" target="_blank">
+      <img
+        src="https://codeforces-readme-stats.vercel.app/api/card?username=prshotm94"
+      />
+    </a>
+  </div>
+
+  <div class="card glass-card">
+    <h3>GitHub</h3>
+    <h3>{{ git_data.name }}</h3>
+    <a href="{{ git_data.html_url }}" target="_blank">
+      <img src="{{ git_data.avatar_url }}" />
+    </a>
+    <p>{{ git_data.bio }}</p>
+    <p>
+      Repos: {{ git_data.public_repos }} | Followers: {{ git_data.followers }}
+    </p>
+  </div>
+
+  <div class="card glass-card">
+    <h3>Coding Ninjas</h3>
+    <a
+      href="https://www.codingninjas.com/studio/profile/parshotam"
+      target="_blank"></a>
+      <h2>{{ user.name }}</h2>
+      <p><strong>College Badges:</strong> {{ user.badge_count }}</p>
+      <p><strong>Total badges: </strong> {{user.cnt}}
+      <hr />
+
+      <h3>DSA Stats ({{ user.total }})</h3>
+      <div class="stat easy">
+        <span>Easy:</span> <span>{{ user.easy }}</span>
+      </div>
+      <div class="stat moderate">
+        <span>Moderate:</span> <span>{{ user.moderate }}</span>
+      </div>
+      <div class="stat hard">
+        <span>Hard:</span> <span>{{ user.hard }}</span>
+      </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,226 @@
+/* ===== GLOBAL ===== */
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    background-color: #909EAE;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    background-color: #909EAE;
+}
+
+
+
+.container {
+    background-color: transparent !important;
+}
+
+
+
+/* ===== BOOTSTRAP NAVBAR (ONLY THIS) ===== */
+.navbar {
+    background: rgba(34, 34, 34, 0.65) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* ===== MAIN CONTENT ===== */
+.container {
+    padding: 20px;
+}
+
+/* Allows footer to stay at bottom */
+main {
+    flex: 1;
+}
+
+.skill-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.skill-progress {
+    width: 90%;
+    height: 6px;
+    border-radius: 10px;
+}
+
+.glass-card{
+    &:hover{
+        box-shadow: 0px 0px 3px 3px black;
+    }
+}
+
+/* ===== PROFILE ===== */
+.profile {
+    width: 200px;
+    border-radius: 50%;
+    &:hover{
+        box-shadow: 0px 0px 3px 3px white;
+    }
+}
+
+/* Background profile section (if used) */
+.profile-img {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+/* ===== CODING PROFILES SECTION ===== */
+.coding-profiles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Cards */
+.glass-card {
+    background: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #000;
+}
+
+.card {
+    flex: 1 1 300px;
+    max-width: 400px;
+    min-width: 300px;
+
+    background: rgba(53, 100, 130, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    text-align: center;
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.intro{
+    background: transparent;
+}
+.coding-profiles .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Card heading */
+.coding-profiles .card h3 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    color: #222;
+}
+
+/* Card images */
+.coding-profiles .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* ===== TEXTAREA ===== */
+textarea {
+    width: 100%;
+    height: 80px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 40px 20px 20px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-section {
+    flex: 1 1 250px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 15px;
+    color: #ffcc00;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a:hover {
+    color: #ffcc00;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Footer bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 13px;
+    color: #aaa;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 10px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 700px) {
+    .coding-profiles .card {
+        flex: 1 1 90%;
+    }
+}

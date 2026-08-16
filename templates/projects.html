@@ -1,21 +1,50 @@
-{% extends "base.html" %} {% block content %}
-<h2>GitHub Repos</h2>
+{% extends "base.html" %} 
+{% block content %}
 
-<div class="coding-profiles">
-  {% for repo in git %}
-  <div class="card glass-card">
-    <h4>{{ repo.name }}</h4>
-
-    <a href="{{ repo.html_url }}" target="_blank">
-      <img src="{{ repo.owner.avatar_url }}" alt="GitHub Avatar" width="80" />
+<section class="stagger-1">
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; flex-wrap: wrap; gap: 20px;">
+    <h2 class="section-title" style="margin-bottom: 0;">
+      <span>03 / Work</span>
+      GitHub Projects
+    </h2>
+    
+    <a href="https://cardioguard-ai-123.streamlit.app/" target="_blank" class="btn-secondary" style="color: #00d4ff; border-color: rgba(0, 212, 255, 0.3);">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      View CardioGuard-AI
     </a>
-
-    <p>Language: {{ repo.language }}</p>
-    <p>Description: {{ repo.description }}</p>
   </div>
-  {% endfor %}
-</div>
 
-<h3>Some other links</h3>
-<a href="https://cardioguard-ai-123.streamlit.app/">CardioGuard-AI</a>
+  <div class="projects-grid">
+    {% for repo in git %}
+    <div class="glass-card project-card stagger-2" style="animation-delay: {{ loop.index0 * 0.1 }}s;">
+      <div class="project-header">
+        <a href="{{ repo.owner.html_url }}" target="_blank">
+          <img src="{{ repo.owner.avatar_url }}" alt="GitHub Avatar" class="project-avatar" />
+        </a>
+        <h4 class="project-title">{{ repo.name }}</h4>
+      </div>
+
+      {% if repo.language %}
+      <span class="project-lang">{{ repo.language }}</span>
+      {% else %}
+      <span class="project-lang" style="opacity: 0.5;">Mixed</span>
+      {% endif %}
+      
+      <p class="project-desc">
+        {% if repo.description %}
+          {{ repo.description }}
+        {% else %}
+          <em>No description provided for this repository.</em>
+        {% endif %}
+      </p>
+
+      <a href="{{ repo.html_url }}" target="_blank" class="project-link">
+        View Repository 
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
 {% endblock %}
